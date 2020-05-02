@@ -1,5 +1,5 @@
-#### Using CycleCloud to rapid deploy HPC with PBS Pro and BeeGFS
-### PBS Professional Open Source Project -- "Golden" Source Repository
+# Using CycleCloud to rapid deploy HPC with PBS Pro and BeeGFS
+## PBS Professional Open Source Project -- "Golden" Source Repository
 
 If you are new to this project, please start at http://www.pbspro.org
 
@@ -44,9 +44,9 @@ There is a huge opportunity to advance the state of the art in HPC scheduling by
 
 
 
-A CycleCloud Project for starting a BeeGFS cluster in Azure. 
+## A CycleCloud Project for starting a BeeGFS cluster in Azure. 
 
-## Performance, Capacity and Cost
+### Performance, Capacity and Cost
 
 This project includes two scenarios; one configuration based on low-latency local NVMe SSDs and one based on Azure Premium Disks.
 
