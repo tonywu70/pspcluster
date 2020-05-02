@@ -1,7 +1,7 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 #
-default[:pbspro][:version] = "18.1.4-0"
+default[:pbspro][:version] = "19.1.2-0"
 default[:pbspro][:slots] = nil
 
 default[:pbspro][:is_grouped] = true

@@ -103,7 +103,7 @@ IconUrl = https://www.beegfs.io/content/wp-content/uploads/pics/beegfs-logo/BeeG
     InitialCount= $InitialClientCount
 
         [[[cluster-init pbsbeegfs:client:$ProjVersion]]]
-
+        [[[cluster-init cyclecloud/pbspro:execute]]]
     [[nodearray monitor]]
     MachineType = $MonitorVMType
 
@@ -239,7 +239,7 @@ Order = 20
     [[parameters Software]]
     Description = "Specify the scheduling software, and base OS installed on all nodes, and optionally the cluster-init and chef versions from your Locker."
     Order = 10
-    Hidden = true
+    Hidden = false
 
         [[[parameter ImageName]]]
         Label = Base OS
