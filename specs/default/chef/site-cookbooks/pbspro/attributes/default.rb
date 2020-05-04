@@ -25,11 +25,13 @@ default[:pbspro][:autoscale_hook][:cyclecloud_home] = node[:cyclecloud][:home]
 default[:pbspro][:autoscale_hook][:autostart_log_level] = "DEBUG"
 default[:pbspro][:autoscale_hook][:autostart_log_file_level] = "DEBUG"
 
-if node[:cyclecloud][:node][:template] == "master"
-	default[:cyclecloud][:cluster][:autoscale][:idle_time_before_jobs] = 3600
+if node[:cyclecloud][:node][:template] == "manager"
+	default[:cyclecloud][:cluster][:autoscale][:idle_time_before_jobs] = 300
 	default[:cyclecloud][:cluster][:autoscale][:idle_time_after_jobs] = 300
 else
 	# the pbs autoscaler should be removing idle nodes, but if after an hour of idle time assume something is wrong with the autoscaler.
-	default[:cyclecloud][:cluster][:autoscale][:idle_time_before_jobs] = 4 * 3600
-	default[:cyclecloud][:cluster][:autoscale][:idle_time_after_jobs] = 4 * 3600
+	#default[:cyclecloud][:cluster][:autoscale][:idle_time_before_jobs] = 4 * 3600
+	#default[:cyclecloud][:cluster][:autoscale][:idle_time_after_jobs] = 4 * 3600
+	default[:cyclecloud][:cluster][:autoscale][:idle_time_before_jobs] = 900
+	default[:cyclecloud][:cluster][:autoscale][:idle_time_after_jobs] = 900
 end

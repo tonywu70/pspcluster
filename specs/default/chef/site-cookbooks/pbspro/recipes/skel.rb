@@ -11,7 +11,7 @@ directory "/etc/skel/demo" do
   not_if "test -d /etc/skel/demo"
 end
 
-%w{pi.py pi.sh runpi.sh}.each do |myfile|
+%w{pi.py pi.sh runpi.sh demo.pbs}.each do |myfile|
   cookbook_file "/etc/skel/demo/#{myfile}" do
     source myfile
     owner "root"
