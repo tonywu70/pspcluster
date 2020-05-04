@@ -15,7 +15,7 @@ yum_package package_name do
   action :install
 end
 
-nodearray = node[:cyclecloud][:node][:template] || "execute"
+nodearray = node[:cyclecloud][:node][:template] || "client"
 slot_type = node[:pbspro][:slot_type] || nodearray
 machinetype = node[:azure][:metadata][:compute][:vmSize]
 
