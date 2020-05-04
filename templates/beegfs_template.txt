@@ -79,14 +79,14 @@
 
     [[nodearray client]]
         # The initial number of cores of this type to start when the cluster starts
-        InitialCount= 0
+        InitialCount= $InitialClientCount
         MaxCount = 99
         MachineType = $ClientVMType
         # The initial number of cores of this type to start when the cluster starts
-        InitialCount= $InitialClientCount
         AdditionalClusterInitSpecs = $ExecuteClusterInitSpecs
         [[[configuration]]]
             autoscale.disabled = ${Autoscale == False}
+	    cyclecloud.cluster.autoscale.idle_time_after_jobs = 300
         [[[cluster-init pbsbeegfs:client:$ProjVersion]]]
         [[[cluster-init cyclecloud/pbspro:execute]]]
 
