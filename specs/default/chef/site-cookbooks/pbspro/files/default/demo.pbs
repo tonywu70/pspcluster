@@ -1,0 +1,6 @@
+#!/bin/bash
+#PBS -N BeeGFS
+#PBS -q workq
+#PBS -l walltime=01:00:00
+#PBS -l select=5:ncpus=2
+dd if=/dev/zero of=/mnt/beegfs/benchfile bs=10m count=10000

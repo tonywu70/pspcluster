@@ -79,12 +79,13 @@
 
     [[nodearray client]]
         # The initial number of cores of this type to start when the cluster starts
-        InitialCount= 0
+        InitialCount= $InitialClientCount
         MaxCount = 99
         MachineType = $ClientVMType
         # The initial number of cores of this type to start when the cluster starts
-        InitialCount= $InitialClientCount
         AdditionalClusterInitSpecs = $ExecuteClusterInitSpecs
+        KeepAlive = false
+        Fixed = false
         [[[configuration]]]
             autoscale.disabled = ${Autoscale == False}
         [[[cluster-init pbsbeegfs:client:$ProjVersion]]]
