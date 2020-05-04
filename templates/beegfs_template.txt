@@ -88,7 +88,9 @@
         Fixed = false
         [[[configuration]]]
             autoscale.disabled = ${Autoscale == False}
-	    cyclecloud.cluster.autoscale.idle_time_after_jobs = 300
+            cyclecloud.cluster.autoscale.stop_enabled = true
+	        cyclecloud.cluster.autoscale.idle_time_after_jobs = 300
+            cyclecloud.cluster.autoscale.idle_time_before_jobs = 300
         [[[cluster-init pbsbeegfs:client:$ProjVersion]]]
         [[[cluster-init cyclecloud/pbspro:execute]]]
 
