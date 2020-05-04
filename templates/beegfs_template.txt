@@ -84,6 +84,8 @@
         MachineType = $ClientVMType
         # The initial number of cores of this type to start when the cluster starts
         AdditionalClusterInitSpecs = $ExecuteClusterInitSpecs
+        KeepAlive = false
+        Fixed = false
         [[[configuration]]]
             autoscale.disabled = ${Autoscale == False}
 	    cyclecloud.cluster.autoscale.idle_time_after_jobs = 300
