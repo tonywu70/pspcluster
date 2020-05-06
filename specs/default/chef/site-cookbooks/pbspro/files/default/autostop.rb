@@ -29,11 +29,12 @@ def is_keepalive?
             log "Deleting #{KEEPALIVE_FILE} because it has been more than #{KEEPALIVE_THROTTLE} seconds since it was created."
             log "Will be recreated the next iteration."
             File.delete KEEPALIVE_FILE
-        end
+        end 
 
         # either way, let's return true here. I want to give the autoscaler on the master a chance to terminate this
         # instance.
-        return true
+        # return true
+        return false
     end
     
     log "Checking to see if this node has KeepAlive=true"
