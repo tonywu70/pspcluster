@@ -8,7 +8,7 @@ require 'json'
 
 # Arguments
 AUTOSTOP_ENABLED = `jetpack config cyclecloud.cluster.autoscale.stop_enabled`.downcase.strip == "true"
-KEEPALIVE_THROTTLE = `jetpack config cyclecloud.cluster.autoscale.keep_alive_throttle 1800`.to_i
+KEEPALIVE_THROTTLE = `jetpack config cyclecloud.cluster.autoscale.keep_alive_throttle 900`.to_i
 KEEPALIVE_FILE = '/opt/cycle/jetpack/run/node.keepalive'.freeze
 
 # Short-circuit without error if not enabled

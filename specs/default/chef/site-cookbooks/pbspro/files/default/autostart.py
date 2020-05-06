@@ -370,7 +370,7 @@ class PBSAutostart:
             pbscc.warn("cyclecloud.cluster.autoscale.stop_enabled is false, idle machines will not be terminated")
         
         if stop_enabled:
-            idle_before_threshold = float(self.cc_config.get("cyclecloud.cluster.autoscale.idle_time_before_jobs", 3600))
+            idle_before_threshold = float(self.cc_config.get("cyclecloud.cluster.autoscale.idle_time_before_jobs", 300))
             idle_after_threshold = float(self.cc_config.get("cyclecloud.cluster.autoscale.idle_time_after_jobs", 300))
         
             for m in idle_machines:
