@@ -34,7 +34,7 @@
         [[[configuration]]]
             cyclecloud.maintenance_converge.enabled = true
         [[[cluster-init pbsbeegfs:manager:$ProjVersion]]]
-        [[[cluster-init cyclecloud/pbspro:master]]]  
+        [[[cluster-init pbsbeegfs:master:$ProjVersion]]]  
         [[[network-interface eth0]]]
             AssociatePublicIpAddress = $UsePublicNetwork
         [[[input-endpoint ganglia]]]
