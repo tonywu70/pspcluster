@@ -25,7 +25,6 @@
             cyclecloud.mounts.storage.disabled = true
             cyclecloud.mounts.meta.disabled = true
         [[[cluster-init pbsbeegfs:default:$ProjVersion]]]
-        [[[cluster-init cyclecloud/pbspro:default]]]
 
     [[node manager]]
         MachineType = $ManagerVMType
@@ -92,7 +91,7 @@
 	        cyclecloud.cluster.autoscale.idle_time_after_jobs = 300
             cyclecloud.cluster.autoscale.idle_time_before_jobs = 300
         [[[cluster-init pbsbeegfs:client:$ProjVersion]]]
-        [[[cluster-init cyclecloud/pbspro:execute]]]
+        [[[cluster-init pbsbeegfs:execute:$ProjVersion]]]
 
     [[nodearray monitor]]
         MachineType = $MonitorVMType
@@ -101,7 +100,7 @@
     [[nodearray login]]
         InitialCount = $NumberLoginNodes
         MachineType = $ManagerVMType
-        [[[cluster-init cyclecloud/pbspro:login]]]
+        [[[cluster-init pbsbeegfs:login:$ProjVersion]]]
         [[[configuration]]]
         autoscale.disabled = true
 
