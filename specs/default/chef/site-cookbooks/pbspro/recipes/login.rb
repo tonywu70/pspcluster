@@ -7,7 +7,7 @@ pbsprover = node[:pbspro][:version]
 package_name = "pbspro-client-#{pbsprover}.x86_64.rpm"
 
 jetpack_download package_name do
-  project 'pbspro'
+  project 'pbsbeegfs'
 end
 
 yum_package package_name do
