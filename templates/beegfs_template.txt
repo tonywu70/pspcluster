@@ -48,6 +48,7 @@
         [[[configuration azvolumes.mounts]]]
             storage.mountpoint = $BeeGFSRoot
             storage.type = xfs
+            meta.raid_level = 0
         [[[volume disk1]]]
             Size = $StorageDiskSize
             SSD = true
@@ -62,6 +63,10 @@
         MachineType = $MetadataVMType
         # The initial number of cores of this type to start when the cluster starts
         InitialCount= $InitialMetadataCount
+        [[[configuration azvolumes.mounts]]]
+            meta.mountpoint = $BeeGFSMetaRoot
+            meta.fs_type = ext4
+            meta.raid_level = 0
         [[[volume disk1]]]
             Size = $MetadataDiskSize
             SSD = true
@@ -70,10 +75,7 @@
             Size = $MetadataDiskSize
             SSD = true
             Mount = meta
-        [[[configuration azvolumes.mounts]]]
-            meta.mountpoint = $BeeGFSRoot
-            meta.fs_type = ext4
-            meta.raid_level = 0
+        
         [[[cluster-init pbsbeegfs:metadata:$ProjVersion]]]
 
     [[nodearray client]]
@@ -247,7 +249,12 @@
         [[[parameter BeeGFSRoot ]]]
             Label = BeeGFS Dir 
             Description = The root directory for BeeGFS data on the MDT, MGS and OSS servers
-            DefaultValue = /data/beegfs
+            DefaultValue = /data/beegfs/storage
+
+        [[[parameter BeeGFSMetaRoot ]]]
+            Label = BeeGFS Dir 
+            Description = The root directory for BeeGFS data on the MDT, MGS and OSS servers
+            DefaultValue = /data/beegfs/meta
 
         [[[parameter InitialStorageCount]]]
             Label = Storage VM Count
