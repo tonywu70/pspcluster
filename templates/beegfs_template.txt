@@ -76,7 +76,7 @@
             meta.raid_level = 0
         [[[cluster-init pbsbeegfs:metadata:$ProjVersion]]]
 
-    [[nodearray client]]
+    [[nodearray execute]]
         # The initial number of cores of this type to start when the cluster starts
         InitialCount= $InitialClientCount
         MaxCount = 99
@@ -97,12 +97,7 @@
         MachineType = $MonitorVMType
         [[[cluster-init pbsbeegfs:mon:$ProjVersion]]]
 
-    [[nodearray login]]
-        InitialCount = $NumberLoginNodes
-        MachineType = $ManagerVMType
-        [[[cluster-init pbsbeegfs:login:$ProjVersion]]]
-        [[[configuration]]]
-        autoscale.disabled = true
+    
 
 [parameters About]
     Order = 1
@@ -220,16 +215,7 @@
             Description = Cluster init specs to apply to execute nodes
             ParameterType = Cloud.ClusterInitSpecs
 
-        [[[parameter NumberLoginNodes]]]
-            Label = Num Login Nodes
-            DefaultValue = 0
-            Description = Number of optional login nodes to create.
-            Config.Plugin = pico.form.NumberTextBox
-            Config.MinValue = 0
-            Config.MaxValue = 10000
-            Config.IntegerOnly = true
-
-
+        
     [[parameters BeeGFS Settings]]
         Description = "Section for configuring BeeGFS"
         Order = 5
